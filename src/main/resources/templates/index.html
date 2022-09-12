@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zn-Ch">
+<header th:replace="header::header-fragment"></header>
+<body class="hold-transition sidebar-mini sidebar-collapse skin-blue">
+<div class="wrapper">
+    <!-- 引入页面头header-fragment -->
+    <div th:replace="header::header-nav"></div>
+    <!-- 引入工具栏sidebar-fragment -->
+    <div th:replace="sidebar::sidebar-fragment(${path})"></div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- Main content -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="card-header">
+                    <h3 class="card-title">首页</h3>
+                </div>
+                <!-- 模态框,用于信息的展示 -->
+                <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body" id="infoModalContext">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <img th:src="@{/dist/img/crack.png}" class="rounded img-fluid img-thumbnail"
+                                             alt="...">
+                                        <blockquote class="blockquote text-center">
+                                            <p class="mb-auto">1</p>
+                                        </blockquote>
+                                    </div>
+                                    <div class="col-sm">
+                                        <img th:src="@{/dist/img/rebar.png}" class="rounded img-fluid img-thumbnail"
+                                             alt="...">
+                                        <blockquote class="blockquote text-center">
+                                            <p class="mb-auto">2</p>
+                                        </blockquote>
+                                    </div>
+                                    <div class="col-sm">
+                                        <img th:src="@{/dist/img/spall.png}" class="rounded img-fluid img-thumbnail"
+                                             alt="...">
+                                        <blockquote class="blockquote text-center">
+                                            <p class="mb-auto">3</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">我知道了
+                                </button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                <!-- 主界面 -->
+                <div class="row">
+
+                </div>
+                <!-- 引入页脚footer-fragment -->
+                <div th:replace="footer::footer-fragment"></div>
+            </div>
+            <!-- jQuery -->
+            <script th:src="@{/plugins/jquery/jquery.js}"></script>
+            <!-- jQuery UI 1.11.4 -->
+            <script th:src="@{/plugins/jQueryUI/jquery-ui.min.js}"></script>
+            <!-- Bootstrap 4 -->
+            <script th:src="@{/plugins/bootstrap/js/bootstrap.bundle.js}"></script>
+            <!-- AdminLTE App -->
+            <script th:src="@{/plugins/adminlte/adminlte.js}"></script>
+            <script th:src="@{/plugins/sweetalert/sweetalert.min.js}"></script>
+            <script th:src="@{/plugins/fileinput/js/fileinput.js}"></script>
+            <script th:src="@{/plugins/fileinput/js/theme.js}"></script>
+            <script th:src="@{/plugins/fileinput/js/zh.js}"></script>
+            <script th:src="@{/plugins/chart-js/chart.min.js}"></script>
+            <script th:src="@{/plugins/sweetalert2/sweetalert2.all.min.js}"></script>
+            <script th:src="@{/plugins/bootstrap-table/js/bootstrap-table.min.js}"></script>
+            <script th:src="@{/plugins/datetimepicker/jquery.datetimepicker.full.min.js}"></script>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <script th:src="@{/dist/js/public.js}"></script>
+            <script th:src="@{/dist/js/index.js}"></script>
+            <script th:src="@{/dist/js/bridge.js}"></script>
+</body>
+</html>
