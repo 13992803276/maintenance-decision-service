@@ -29,29 +29,29 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a th:href="@{/common/index}" th:class="${path}=='index'?'nav-link active':'nav-link'">
+                    <a th:href="@{/common/traffic}" th:class="${path}=='index'?'nav-link active':'nav-link'">
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>
-                            信息总览
+                            交通量分析
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a th:href="@{/common/detect}" th:class="${path}=='detect'?'nav-link active':'nav-link'">
-                        <i class="nav-icon fa fa fa-pencil-square-o"></i>
-                        <p>
-                            在线检测
-                        </p>
-                    </a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a th:href="@{/common/detect}" th:class="${path}=='detect'?'nav-link active':'nav-link'">-->
+<!--                        <i class="nav-icon fa fa fa-pencil-square-o"></i>-->
+<!--                        <p>-->
+<!--                            在线检测-->
+<!--                        </p>-->
+<!--                    </a>-->
+<!--                </li>-->
 
-                <!-- 图像管理 -->
-                <li class="nav-item">
-                    <a th:href="@{/common/images}" th:class="${path}=='images'?'nav-link active':'nav-link'">
-                        <i class="fa fa-image nav-icon" aria-hidden="true"></i>
-                        <p>图像管理</p>
-                    </a>
-                </li>
+<!--                &lt;!&ndash; 图像管理 &ndash;&gt;-->
+<!--                <li class="nav-item">-->
+<!--                    <a th:href="@{/common/images}" th:class="${path}=='images'?'nav-link active':'nav-link'">-->
+<!--                        <i class="fa fa-image nav-icon" aria-hidden="true"></i>-->
+<!--                        <p>图像管理</p>-->
+<!--                    </a>-->
+<!--                </li>-->
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -3,9 +3,7 @@ package com.cn.maintenancedecisionservice.controller;
 
 import com.cn.maintenancedecisionservice.model.User;
 import com.cn.maintenancedecisionservice.result.Result;
-import com.cn.maintenancedecisionservice.service.SessionService;
-import com.cn.maintenancedecisionservice.serviceImpl.UserService;
-import lombok.AllArgsConstructor;
+import com.cn.maintenancedecisionservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -46,4 +46,10 @@ public class IndexController {
         return "forget";
     }
 
+    @GetMapping("/traffic")
+    public String toTraffic() {
+        request.setAttribute("path", "traffic");
+        return "traffic";
+    }
+
 }
