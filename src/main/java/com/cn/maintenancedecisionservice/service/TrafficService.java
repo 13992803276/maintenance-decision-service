@@ -1,6 +1,8 @@
 package com.cn.maintenancedecisionservice.service;
 
+import com.cn.maintenancedecisionservice.model.ExportTrafficGroup;
 import com.cn.maintenancedecisionservice.model.Traffic;
+import com.cn.maintenancedecisionservice.repository.ExportTrafficGroupRepository;
 import com.cn.maintenancedecisionservice.repository.TrafficRepository;
 import com.cn.maintenancedecisionservice.result.Result;
 import com.cn.maintenancedecisionservice.utils.ExcelUtil;
@@ -17,17 +19,24 @@ import java.util.List;
  */
 @Service
 @Slf4j
-@RequiredArgsConstructor
 public class TrafficService {
 
     @Autowired
     TrafficRepository trafficRepository;
 
+    @Autowired
+    ExportTrafficGroupRepository exportTrafficGroupRepository;
+
+//    public TrafficService(TrafficRepository trafficRepository, ExportTrafficGroupRepository exportTrafficGroupRepository) {
+//        this.trafficRepository = trafficRepository;
+//        this.exportTrafficGroupRepository = exportTrafficGroupRepository;
+//    }
+
     public Result<String> importTraffic(String filename, String rootNo) {
         List<Object[]> trafficObjectsList = ExcelUtil.importExcel(filename);
         List<Traffic> trafficList = new ArrayList<>();
         for (Object[] objects : trafficObjectsList) {
-            if(objects.length > 0){
+            if (objects.length > 0) {
                 Traffic traffic = Traffic.builder().rootNo(rootNo)
                         .year(objects[0].toString())
                         .xxhc(Long.parseLong(objects[1].toString()))
@@ -48,4 +57,11 @@ public class TrafficService {
             return Result.failure("导入失败");
         }
     }
+
+    public String exportTrafficReport(String rootNo) {
+        List<ExportTrafficGroup> exportTrafficGroup = exportTrafficGroupRepository.getExportTrafficGroup(rootNo);
+        log.info("exportTrafficGroup is {} ", exportTrafficGroup);
+        return "success";
+    }
+
 }

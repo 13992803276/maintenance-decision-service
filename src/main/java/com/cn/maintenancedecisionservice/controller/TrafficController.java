@@ -23,4 +23,9 @@ public class TrafficController {
         fileName = "/Users/lexu/Desktop/test.xlsx";
         return trafficService.importTraffic(fileName, rootNo);
     }
+
+    @PostMapping("/export")
+    public String exportTraffic(String rootNo){
+        return trafficService.exportTrafficReport(rootNo);
+    }
 }
